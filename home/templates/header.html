@@ -53,11 +53,12 @@
                             <select name="currency" onchange="submit()" >
                                 {% for curr in CURRENCIES %}
                                     <option value="{{ curr.code }}"
-                                            {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>
+                                            {% if curr.code == request.session.currency %}selected="selected"{% endif %}>
                                         {{ curr.symbol }} {{ curr.name }}
                                     </option>
                                 {% endfor %}
                             </select>
+                            
 
                             <noscript>
                                 <input type="submit" value="Set" />

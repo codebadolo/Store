@@ -138,6 +138,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Define where collectstatic will store the static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Optionally, if you have additional directories for static files:
+STATICFILES_DIRS = [
+    #os.path.join(BASE_DIR, 'static'),
+]
+# settings.py
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
@@ -162,3 +172,6 @@ CKEDITOR_CONFIGS = {
 ###################################
 
 #APPEND_SLASH=False
+
+# settings.py
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
