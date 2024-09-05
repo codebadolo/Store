@@ -58,7 +58,7 @@ def index(request):
 
 
 
-def selectlanguage(request):
+'''def selectlanguage(request):
     if request.method == 'POST':  # check post
         cur_language = translation.get_language()
         lasturl= request.META.get('HTTP_REFERER')
@@ -67,6 +67,17 @@ def selectlanguage(request):
         request.session[translation.LANGUAGE_SESSION_KEY]=lang
         #return HttpResponse(lang)
         return HttpResponseRedirect("/"+lang)
+'''
+def selectlanguage(request):
+    if request.method == 'POST':  # check post
+        cur_language = translation.get_language()
+        lasturl = request.META.get('HTTP_REFERER')
+        lang = request.POST['language']
+        translation.activate(lang)
+        # Use the default value for LANGUAGE_COOKIE_NAME
+        request.session['django_language'] = lang
+        return HttpResponseRedirect(lasturl)
+
 
 def aboutus(request):
     #category = categoryTree(0,'',currentlang)

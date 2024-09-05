@@ -175,3 +175,4 @@ CKEDITOR_CONFIGS = {
 
 # settings.py
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LANGUAGE_COOKIE_NAME = 'django_language'
